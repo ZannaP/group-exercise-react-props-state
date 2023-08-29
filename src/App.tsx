@@ -32,16 +32,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React props and state</h1>
+      <h1 key="100">React props and state</h1>
       <ChuckCard greeting={chuckGreeting} />
 
-      <h2>Chuck Info: </h2>
+      <h2 key="101">Chuck Info: </h2>
       <ChuckInfo whales={whalesSaved} kicks={roundHouseKicks} />
 
-      <h2>Jokes: </h2>
-      {jokes.map((joke) => (
-        <ChuckJoke joke={joke.joke} />
-      ))}
+      <h2 key="102">Jokes: </h2>
+      {jokes.map((joke) => {
+        return <ChuckJoke key={joke.id} joke={joke.joke} />;
+      })}
     </div>
   );
 }
