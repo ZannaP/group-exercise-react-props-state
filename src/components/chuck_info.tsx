@@ -1,9 +1,9 @@
 interface ChuckInfoProps {
-  whalesSaved: number;
-  roundhouseKicks: number;
+  whales: number;
+  kicks: number;
 }
 
-const ChuckInfo = (whalesSaved: number, roundHouseKicks: number) => {
+const ChuckInfo: React.FC<ChuckInfoProps> = ({ whales, kicks }) => {
   // 💡 Note that this component, like the <ChuckCard />, uses an "explicit return"
   // Compare this to <ChuckJoke/> which just returns the JSX directly like this:
   // const ChuckJoke = () => <>... some JSX Here...</>;
@@ -21,9 +21,9 @@ const ChuckInfo = (whalesSaved: number, roundHouseKicks: number) => {
 
   return (
     <>
-      <p>Number of Whales Saved: {whalesSaved}</p>
+      <p>Number of Whales Saved: {whales}</p>
 
-      <p>Number of Round House Kicks (in the last day): {roundHouseKicks}</p>
+      <p>Number of Round House Kicks (in the last day): {kicks}</p>
     </>
   );
 };
